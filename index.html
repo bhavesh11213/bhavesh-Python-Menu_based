@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHAVESH TRIVEDI's Menu</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #333333, #666666); /* Dark gradient background */
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffcc00; /* Yellow text color */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden; /* Hide overflow for animation effects */
+        }
+
+        h1 {
+            color: #ffcc00; /* Yellow text color */
+            margin-top: 20px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #000000; /* Shadow for the title */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+            animation: slideIn 2s ease-in-out;
+            z-index: 1; /* Ensure the menu is above the rain */
+        }
+
+        .menu button {
+            margin: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #0044cc, #0088ff); /* Blue gradient background */
+            color: #ffffff; /* White text color */
+            border: 2px solid #ffcc00; /* Yellow border */
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: floating 4s ease-in-out infinite; /* Floating animation */
+        }
+
+        .menu button:hover {
+            background: linear-gradient(135deg, #002288, #0044cc); /* Darker blue gradient on hover */
+            color: #ffcc00; /* Yellow text color on hover */
+            transform: scale(1.05) rotate(-2deg); /* Enlarge and rotate slightly on hover */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Rain Effect */
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0; /* Ensure the rain is behind the menu */
+            overflow: hidden;
+        }
+
+        .rain-drop {
+            position: absolute;
+            bottom: 100%;
+            width: 2px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: fall linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Smiley and Project Title */
+        .project-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 2; /* Ensure it is above all other elements */
+        }
+
+        .smiley {
+            font-size: 1.5em; /* Smaller smiley */
+            margin-right: 10px;
+            animation: spin 5s linear infinite;
+        }
+
+        .title-text {
+            font-size: 1em; /* Smaller project title */
+            color: #f0eee7;
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Thank you message */
+        .thank-you {
+            margin-top: 50px;
+            font-size: 1.5em;
+            color: #ffcc00;
+            text-shadow: 1px 1px 2px #000000;
+            animation: fadeIn 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Smiley and Title -->
+    <div class="project-title">
+        <div class="smiley">😊</div>
+        <div class="title-text">BT-M project</div>
+    </div>
+
+    <h1>Welcome to BHAVESH TRIVEDI's Menu</h1>
+    <div class="menu">
+        <a href="geolocation.html"><button>Geolocation</button></a>
+        <a href="googlesearch.html"><button>Search Top 5</button></a>
+        <a href="liveinterpreter.html"><button>Live HTML Interpreter</button></a>
+        <a href="pythonsms.html"><button>Send SMS</button></a>
+        <a href="bulk_email.html"><button>Bulk E-mail</button></a>
+        <a href="speechtotext.html"><button>Speech to Text</button></a>
+        <a href="gnome.html"><button>Gnome</button></a>
+        <a href="linux.html"><button>Linux Terminal</button></a>
+        <a href="cam_live.html"><button>Camera Live</button></a>
+        <a href="capture.html"><button>Capture Image</button></a>
+        <a href="draganddrop.html"><button>Drag and Drop</button></a>
+        <a href="chatbot.html"><button>AI Bot</button></a>
+        <a href="docker.html"><button>My Docker</button></a>
+        <a href="js_camera.html"><button>My Camera</button></a>
+        <a href="send_whatsapp.html"><button>Send WhatsApp</button></a>
+        <a href="voicetovoice.html"><button>Voice Recorder</button></a>
+        <a href="text_to_speech.html"><button>Text to Speech</button></a>
+        <a href="social_media.html"><button>Social Media</button></a>
+        <a href="ec2.html"><button>Launch EC2 Instance</button></a>
+        <a href="create_iam.html"><button>Create IAM User</button></a>
+        <a href="s3_bucket.html"><button>Create S3 Bucket</button></a>
+        <a href="snake_game.html"><button>Snake Game</button></a>
+        <a href="wikipedia_reader.html"><button>Wikipedia Reader</button></a>
+        <a href="googlesearch.html"><button>Google Search</button></a>
+        <a href="password_form.html"><button>Password Generator</button></a>
+        <a href="ssh_linux.html"><button>SSH Command Executor</button></a>
+        <a href="music_player.html"><button>Music Player</button></a>
+    </div>
+
+    <div class="rain"></div>
+
+    <!-- Thank you message -->
+    <div class="thank-you">Thank you 😊</div>
+
+    <!-- Optional JavaScript for additional effects -->
+    <script>
+        // Add rain effect
+        const rainContainer = document.querySelector('.rain');
+        const numDrops = 100; // Adjust the number of raindrops for more or less rain
+
+        for (let i = 0; i < numDrops; i++) {
+            const drop = document.createElement('div');
+            drop.className = 'rain-drop';
+            drop.style.left = `${Math.random() * 100}vw`;
+            drop.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // Different fall speed
+            drop.style.animationDelay = `${Math.random() * 2}s`; // Different start time
+            rainContainer.appendChild(drop);
+        }
+
+        // Add a simple loading animation
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 1s ease';
+                document.body.style.opacity = '1';
+            }, 100); // Delay the fade-in animation slightly
+        });
+    </script>
+</body>
+</html>

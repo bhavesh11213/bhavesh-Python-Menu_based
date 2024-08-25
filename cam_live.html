@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cam</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #3893cf, #187fc4, #0c7ae7); /* Green-blue gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            color: #196dcc; 
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background: rgba(5, 194, 228, 0.8); 
+            box-shadow: 0 4px 10px rgba(20, 54, 206, 0.5);
+            border-radius: 15px;
+            width: 80%; /* Reduced width */
+            max-width: 480px; /* Further reduced max-width */
+        }
+
+        video {
+            width: 100%;
+            border: 2px solid #b4327e; 
+            border-radius: 10px;
+            background: #1c1580; /* Black background inside video element */
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3d5772, #5b8191); 
+            width: 100%;
+            height: 60px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            color: #6a86a7; 
+        }
+
+        .home-button {
+            background: linear-gradient(135deg, #576888, #abb8ab); 
+            color: #c6d8df; 
+            border: 2px solid #7079a5; 
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            background: linear-gradient(135deg, #110de0, #5b07c9); 
+            color: #139cd3;
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        h1 {
+            color: #191b86;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="home-button" onclick="window.location.href = 'index.html'">Home</button>
+    </header>
+    <div class="container">
+        <h1>Live Cam Task</h1>
+        <video id="video" autoplay></video>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById('video');
+
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                        video.srcObject = stream;
+                        video.play();
+                    })
+                    .catch(err => {
+                        console.error("Error accessing camera: ", err);
+                    });
+            } else {
+                alert("Sorry, your browser does not support camera access.");
+            }
+        });
+    </script>
+</body>
+</html>
